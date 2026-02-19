@@ -1,0 +1,13 @@
+services:
+  benchmark:
+    cpuset: "0-39"
+    image: tinguyen2024/ampere_optimized_models_benchmark:v1.0
+    container_name: ampere-benchmark
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    environment:
+      - N_THREADS=${N_THREADS:-32}
+    restart: unless-stopped
