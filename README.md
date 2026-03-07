@@ -1,7 +1,7 @@
 # ampere_optimized_models_benchmark:v1.0 - How-to
 
 - Download the Ampere optimized models from Huggingface.
-- Here're the lists of Ampere optimized models using in this demo:
+## Here're the lists of Ampere optimized models using in this demo:
 - deepseek-r1-distill-qwen-7b-Q8R16.gguf
 - gemma-3-12b-it-Q8R16.gguf
 - granite-8b-code-instruct-128k-Q8R16.gguf
