@@ -11,7 +11,7 @@
 - Qwen3-8B-Q8R16.gguf
 
 #### --
-- Place the models inside the models directory.
+- Place the models inside the models directory. (need to create the models directory)
 - Run 'start_app.sh'. The script will pull the demo docker image from docker hub, setup the environments neccessary for this demo.
 - Open the demo at http://< your_ip_address >:5050
 
