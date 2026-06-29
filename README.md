@@ -75,9 +75,28 @@ Step-by-step guide to run he AI Model Explorer demo in Docker.
 - Minimum: 20GB disk space.  Recommended:  100+ GB (multiple models, large models)
 
 **Software Stack**
+<img width="2091" height="1094" alt="swstack.png" src="swstack.png" />
 
-
-
+**Demo Deploymen**
+- Install docker
+- Git clone from the repo: GitHub - ampere-solution/ampere_optimized_models_benchmark-v1.0: ampere_optimized_models_benchmark version 1.0
+- Download and copy GGUF models in the `./models/` directory
+- docker-compose.yaml
+```yaml
+services:
+  benchmark:
+    cpuset: "0-39"
+    image: tinguyen2024/ampere_optimized_models_benchmark:v1.0
+    container_name: ampere-benchmark
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    environment:
+      - N_THREADS=${N_THREADS:-32}
+    restart: unless-stopped
+```
 
 
 
