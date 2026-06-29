@@ -101,6 +101,7 @@ services:
 - Open the demo at http://< your_ip_address >:5050
 
 **Demo Talking Points**
+
 What is this demo - This is a benchmarking and exploration tool for GGUF LLMs running on Ampere CPUs - no GPU.
 Why Ampere for inference (the value prop):
 - Single thread per core - no hyper threading contention; each core is dedicated, so scaling is predictable.
