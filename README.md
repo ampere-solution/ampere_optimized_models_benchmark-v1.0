@@ -20,7 +20,7 @@ The demo is a GGUF model explorer platform built around a Flask server that driv
 ## What This Demo Shows
 This is a web-based benchmarking platform for testing the performance of AI language models running locally on Ampere processors.
 
-What it does:
+**What it does**
 
 Place GGUF model files (quantized LLMs like Llama 3) in the ./models/ folder, start the app, and use a browser UI to:                  
 - Select a model from a dropdown (auto-detected from your local files)
@@ -28,7 +28,47 @@ Place GGUF model files (quantized LLMs like Llama 3) in the ./models/ folder, st
 - Configure parameters (max tokens, temperature, threads, number of runs)
 - Click Start and watch the model generate text in real-time with markdown rendering
 
-What it measures:
+**What it measures**
 
 After each run, it reports these performance metrics:
 <img width="2091" height="1094" alt="table.png" src="table.png" />
+
+**Key features**
+- Live streaming — tokens appear in real-time as the model generates them, rendered as markdown.
+- Native C-level metrics — uses llama.cpp's internal performance counters for accurate throughput numbers (not Python-level timing).
+- Model auto-discovery — scans GGUF files and extracts metadata (name, architecture, quantization, context length) from both the filename and binary header.
+- Save to database — optionally persist results to SQLite for later comparison and analysis.
+- Dockerized — runs in a container built on Ampere's optimized llama.cpp base image.
+
+## Target Audience
+AI engineers who want to explore how well different quantized LLMs perform on Ampere CPUs — comparing models (3B vs 8B), quantization levels (Q4 vs Q8), or thread configurations to find the optimal setup.
+
+## Key Message -  What are we trying to convince of?
+You're trying to convince that Ampere CPUs are a compelling platform for AI inference — without needing GPUs.
+
+**Core messages**
+You can run production-quality LLM inference on AmpereOne, and here are the real numbers to prove it. 
+
+**What the demo proves**
+- CPU inference is fast enough: Running a model live and showing generation tokens/s demonstrates that AmpereOne delivers practical, usable inference speeds — not just a demo but something you could deploy.
+- Ampere's high core count matters: AmpereOne has up to 192 cores. The thread configuration slider lets you show how throughput scales as you increase threads demonstrating that Ampere's core count directly translates to performance.
+- Cost advantage over GPUs: The subtext of every number on screen is: "You're getting this performance without a GPU." GPU instances are expensive and supply-constrained. Ampere offers predictable, lower-cost inference.
+- Power efficiency: ARM64 architecture is inherently more power-efficient. The token/s numbers, combined with AmpereOne's TDP, tell a strong performance-per-watt story compared to x86 or GPU alternatives.
+- Quantized models run well: Showing Q4 and Q8 quantized models running with solid throughput proves that the combination of efficient quantization + Ampere's architecture is a practical deployment path.
+- It just works: The Docker container runs on the amperecomputingai/llama.cpp optimized base image. The demo shows a polished, ready-to-deploy stack — not a research prototype. The message is: "This is production-ready today."
+
+**The conversation it enables**
+"If you're paying $X/hour for GPU instances to serve these same models, why not run them on Ampere at a fraction of the cost?"
+The live benchmark numbers make that conversation concrete instead of theoretical.
+
+
+
+
+
+
+
+
+
+
+
+
