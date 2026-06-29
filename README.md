@@ -77,7 +77,7 @@ Step-by-step guide to run he AI Model Explorer demo in Docker.
 **Software Stack**
 <img width="2091" height="1094" alt="swstack.png" src="swstack.png" />
 
-**Demo Deploymen**
+**Demo Deployment**
 - Install docker
 - Git clone from the repo: GitHub - ampere-solution/ampere_optimized_models_benchmark-v1.0: ampere_optimized_models_benchmark version 1.0
 - Download and copy GGUF models in the `./models/` directory
@@ -100,7 +100,29 @@ services:
 - Run 'start_app.sh'. The script will pull the demo docker image from docker hub, setup the environments neccessary for this demo.
 - Open the demo at http://< your_ip_address >:5050
 
+**Demo Talking Points**
+What is this demo - This is a benchmarking and exploration tool for GGUF LLMs running on Ampere CPUs - no GPU.
+Why Ampere for inference (the value prop):
+- Single thread per core - no hyper threading contention; each core is dedicated, so scaling is predictable.
+- High core counts - LLM inference parallelizes well across cores.
+- Power efficient vs. GPU - entire models held in DDR memory, no VRAM ceiling, lower $/token at moderate concurrency.
+- Ampere tuned llama.cpp - the base image carries kernels tuned for Ampere processors; same code, materially better token/s than stock builds.
 
+**Stop the Demo**
+- Graceful stop
+```bash
+# stop_app.sh
+$ docker compose stop
+```
+- Remove the demo
+```bash
+$ docker compose down
+```
+
+**Troubleshooting**
+```bash
+$ docker logs ampere-benchmark
+```
 
 
 
