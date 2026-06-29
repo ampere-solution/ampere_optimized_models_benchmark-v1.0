@@ -67,6 +67,15 @@ The demo proves Ampere processors are strong CPUs for LLM inference, and it does
 <img width="2091" height="1094" alt="proofpoint.png" src="proofpoint.png" />
 
 ## Running the Demo
+Step-by-step guide to run he AI Model Explorer demo in Docker.
+
+**Recommended Resources**
+- Minimum: 40 cores.  Recommended: 40+ cores
+- Minimum: 32GB RAM.  Recommended: 64+ GB RAM
+- Minimum: 20GB disk space.  Recommended:  100+ GB (multiple models, large models)
+
+**Software Stack**
+
 
 
 
