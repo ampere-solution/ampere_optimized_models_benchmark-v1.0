@@ -58,11 +58,15 @@ You can run production-quality LLM inference on AmpereOne, and here are the real
 - It just works: The Docker container runs on the amperecomputingai/llama.cpp optimized base image. The demo shows a polished, ready-to-deploy stack — not a research prototype. The message is: "This is production-ready today."
 
 **The conversation it enables**
+
 "If you're paying $X/hour for GPU instances to serve these same models, why not run them on Ampere at a fraction of the cost?"
 The live benchmark numbers make that conversation concrete instead of theoretical.
 
+## Proof Points - How does It Show This?
+The demo proves Ampere processors are strong CPUs for LLM inference, and it does so with both live evidence during the run and post-run statistical artifacts.  Here’s the breakdown:
+<img width="2091" height="1094" alt="proofpoint.png" src="proofpoint.png" />
 
-
+## Running the Demo
 
 
 
