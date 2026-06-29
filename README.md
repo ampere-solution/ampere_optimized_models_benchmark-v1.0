@@ -97,6 +97,13 @@ services:
       - N_THREADS=${N_THREADS:-32}
     restart: unless-stopped
 ```
+- Run 'start_app.sh'. The script will pull the demo docker image from docker hub, setup the environments neccessary for this demo.
+- Open the demo at http://< your_ip_address >:5050
+
+
+
+
+
 
 
 
