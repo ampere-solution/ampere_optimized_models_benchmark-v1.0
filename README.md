@@ -13,3 +13,6 @@
   - Per-Run  Breakdown table - gen token/s, prompt token/s, TTFT, etc…
 <img width="2091" height="1094" alt="image-20260504-170412.png" src="image-20260504-170412.png" />
 
+## Architectural Diagram
+The demo is a GGUF model explorer platform built around a Flask server that drives Ampere optimized llama.cpp inference and streams live results to the browser over SSE.  The architecture diagram captures it in the logical layer below.
+<img width="2091" height="1094" alt="image-20260504-173027.png" src="image-20260504-173027.png" />
